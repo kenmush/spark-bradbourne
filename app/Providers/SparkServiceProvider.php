@@ -50,21 +50,15 @@ class SparkServiceProvider extends ServiceProvider
      */
     public function booted()
     {
-        Spark::noCardUpFront()->teamtrialDays(10);
+        Spark::noCardUpFront()->trialDays(10);
 
         Spark::freePlan()
             ->features([
                 'First', 'Second', 'Third'
             ]);
 
-        Spark::teamplan('Basic', 'spark-test-1')
+        Spark::plan('Basic', 'spark-test-1')
             ->price(10)
-            ->features([
-                'First', 'Second', 'Third'
-            ]);
-
-        Spark::teamplan('Pro', 'spark-test-2')
-            ->price(20)
             ->features([
                 'First', 'Second', 'Third'
             ]);
